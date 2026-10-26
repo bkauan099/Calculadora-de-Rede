@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalcRede · Calculadora de sub-redes IPv4</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>CalcRede</h1>
+    <p>Calculadora de sub-redes IPv4: digite um endereço com prefixo CIDR.</p>
+  </header>
+
+  <main class="conteudo">
+    <section class="cartao" aria-labelledby="titulo-entrada">
+      <h2 id="titulo-entrada">Endereço</h2>
+      <form id="form-calculo" novalidate>
+        <label for="campo-endereco">Endereço IPv4/CIDR</label>
+        <div class="linha-entrada">
+          <input id="campo-endereco" name="endereco" type="text"
+                 placeholder="ex.: 192.168.10.37/26" autocomplete="off"
+                 spellcheck="false" inputmode="decimal"
+                 aria-describedby="mensagem">
+          <button type="submit">Calcular</button>
+        </div>
+        <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="cartao" aria-labelledby="titulo-resultado">
+      <h2 id="titulo-resultado">Resultado</h2>
+      <p id="resultado-vazio" class="dica">Nenhum resultado para mostrar.</p>
+      <table id="tabela-resultado" class="tabela" hidden>
+        <caption id="legenda-resultado"></caption>
+        <tbody id="corpo-resultado"></tbody>
+      </table>
+    </section>
+
+    <section class="cartao" aria-labelledby="titulo-historico">
+      <div class="titulo-com-acao">
+        <h2 id="titulo-historico">Histórico</h2>
+        <button id="botao-limpar" type="button" class="secundario">Limpar histórico</button>
+      </div>
+      <p class="dica">Os 5 últimos cálculos ficam salvos neste navegador. Clique em um para refazer.</p>
+      <ol id="lista-historico" class="historico"></ol>
+    </section>
+  </main>
